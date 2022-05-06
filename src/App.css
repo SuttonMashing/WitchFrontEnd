@@ -1,31 +1,268 @@
-.App {
-  text-align: center;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100vh;
+}
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 63px 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+@media screen and (max-height: 700px) {
+  .header {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  height: 80px;
+
+  background-color: #0065BD;}
+
+  .header-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .header-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+  }
+  
+  .header-items li {
+    margin-right: 0px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+
+/* @media screen and (min-height: 700px) {
+  .header {
+    position: fixed;
+  }
+  .content-container {
+    position: relative;
+    top: 63px;
+  }
+} */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  height: 63px;
+
+  background-color: #4658fbcc;
+}
+
+.header, .menu {
+  font-family: 'Hind Guntur', 'font-regular', Fallback, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  color: #212529;
+}
+
+.header-container {
+  display: flex;
+  width: 85%;
+  justify-content: flex-end;
+}
+
+@media (min-width: 1200px) {
+  .header-container {
+      max-width: 1140px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+      max-width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+      max-width: 720px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+      max-width: 540px;
+  }
+}
+
+.header-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: white;
+}
+
+.header-items li {
+  margin-right: 30px;
+}
+
+
+
+
+.start-page {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 15px;
+}
+
+@media (min-width: 768px) {
+  .start-page {
+    padding-left: 63px;
+  }
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: #f5d1f6cc;
+}
+
+.content-column-1 {
+  width: 20%;
+  height: 100%;
+  border-right: 0.5px solid #DDDDDD;
+  display: none;
+  flex-shrink: 0;
+}
+
+.content-column-2 {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+@media screen and (min-width: 992px) {
+  .content-column-1 {
+    display: unset;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-list {
+  padding: 0;
+  list-style: none;
+  display: block;
+  width: 100%;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  padding: 16px 24px 11px 24px;
+  min-width: 80%;
+  text-align: left;
+}
+
+.menu-item::after {
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  border-color:#0065BD;
+  width: 12px;
+  height: 12px;
+  left: 25%;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:hover, .menu-item:active {
+  background-color: #D1D2D6;
+  color: #000000;
+}
+
+.logo-wrapper {
+  margin: 42px 30px 36px 30px;
+}
+
+.background-image {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
+.expirydate-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100px;
+
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 0.1s linear;
+  }
+} */
+
+/* .App-header {
+  background-color: #fbfbfb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(5, 0, 0);
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.button-colour {
+  background-color:rgb(245, 208, 162);
+  padding: 15px 32px
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +272,6 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */ 
+
+

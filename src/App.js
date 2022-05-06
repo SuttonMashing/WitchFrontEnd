@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import HitherEncounters from './HitherEncounters';
+import StartPage from './StartPage';
+import Menu from './Menu'
+import Header from './Header'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+        <Header/>
+      <div className='content-container'>
+          <div className='content-column-1'>
+            <Menu/>
+          </div>
+        <div className='content-column-2'>
+            <Routes>
+            <Route path="/" element={<StartPage />} />
+            <Route path="/hitherencounters/*" element={<HitherEncounters/>} />
+            </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
