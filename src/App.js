@@ -9,6 +9,7 @@ import HitherEncounters from './HitherEncounters';
 import StartPage from './StartPage';
 import Menu from './Menu'
 import Header from './Header'
+import DownfallCitizens from './DownfallCitizens';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Routes>
             <Route path="/" element={<StartPage />} />
             <Route path="/hitherencounters/*" element={<HitherEncounters/>} />
+            <Route path="/downfallcitizens/*" element={<DownfallCitizens/>} />
             </Routes>
         </div>
       </div>

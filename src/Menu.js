@@ -10,10 +10,10 @@ const Menu = () => {
                 </div>
             </Link>
             <ul className='menu-list'>
-                <li className='menu-item'>Hither Encounter</li>
-                <li className='menu-item'>Downfall Citizens</li>
+                <li className='menu-item'> <Link to="/hitherencounters/">Hither Encounter</Link></li>
+                <li className='menu-item'> <Link to="/downfallcitizens/">Downfall Citizens</Link></li>
                 <li className='menu-item'><Link to="/">Carnival Surprises</Link></li>
-                <li className='menu-item'><Link to="/calendar">Initiative</Link></li>
+                <li className='menu-item'>Initiative</li>
             </ul>
 
             
