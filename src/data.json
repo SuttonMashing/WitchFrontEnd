@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Wendall Gripton",
+      "initiative": 12,
+      "health": 30,
+      "condition": "None"
+    },
+    {
+        "name": "Anakin",
+        "initiative": 14,
+        "health": 32,
+        "condition": "None"
+    },
+    {
+      "name": "Dr",
+      "initiative": 16,
+      "health": 22,
+      "condition": "None"
+    }
+]

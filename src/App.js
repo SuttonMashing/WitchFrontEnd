@@ -10,6 +10,7 @@ import StartPage from './StartPage';
 import Menu from './Menu'
 import Header from './Header'
 import DownfallCitizens from './DownfallCitizens';
+import Initiative from './Initiative';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<StartPage />} />
             <Route path="/hitherencounters/*" element={<HitherEncounters/>} />
             <Route path="/downfallcitizens/*" element={<DownfallCitizens/>} />
+            <Route path="/initiative/*" element={<Initiative/>} />
             </Routes>
         </div>
       </div>
