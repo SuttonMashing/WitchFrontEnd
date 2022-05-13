@@ -16,6 +16,21 @@ const Initiative_Table = () => {
      { label: "Condition", accessor: "condition", sortable: false },
  ];
 
+ const updateinitiativeDB = (value, accessor, tData) => {
+    
+    const returned = axios.patch(`${apiUrl}/api/v1/initiatives/${tData.id}`, { name: value 
+
+    })
+    .then(function (response) {
+        console.log(returned);
+        console.log(tData);
+    })
+    .catch(function (error) {
+        console.log(error);
+        
+    });
+    }
+
  const fetchInitiative= () => {
     axios.get(`${apiUrl}/api/v1/initiatives`)
     .then(response_from_api => {
@@ -49,7 +64,6 @@ const Initiative_Table = () => {
     rowKey: null
 });
 
-const [unitPrice, setUnitPrice] = useState(null);
 
 useEffect(() => {
     fetchInitiative();
@@ -61,7 +75,7 @@ useEffect(() => {
   <>
    <table className="table">
     <TableHead columns={columns} handleSorting={handleSorting}/>
-    <TableBody columns={columns} tableData={tableData} />
+    <TableBody columns={columns} tableData={tableData} updateinitiativeDB={updateinitiativeDB}/>
    </table>
   </>
  );

@@ -1,4 +1,17 @@
-const TableBody = ({ tableData, columns }) => {
+ const TableBody = ({ tableData, columns, updateinitiativeDB }) => {
+
+   const handleChange = (accessor, tData) => (e) => {
+      
+      const value = e.target.textContent;
+      const header = accessor;
+      console.log(tData.id)
+      console.log(value)
+      console.log(accessor)
+      updateinitiativeDB(value, accessor, tData)
+
+      
+   }
+
     return (
      <tbody>
       {tableData.map((data) => {
@@ -6,7 +19,8 @@ const TableBody = ({ tableData, columns }) => {
         <tr key={data.id}>
          {columns.map(({ accessor }) => {
           const tData = data[accessor] ? data[accessor] : "——";
-          return <td key={accessor}>{tData}</td>;
+          return <td onBlur={handleChange(accessor, data)} contentEditable='true' key={accessor}>{tData}</td>
+
          })}
         </tr>
        );
