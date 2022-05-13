@@ -13,22 +13,29 @@ const TableHead = ({ columns, handleSorting }) => {
     };
 
     return (
-    <thead>
-   <tr>
-    {columns.map(({ label, accessor, sortable }) => {
-     return (
-      <th
-       key={accessor}
-       onClick={sortable ? () => handleSortingChange(accessor) : null}
-      >
-       {label}
-      </th>
-     );
-    })}
-   </tr>
-  </thead>
-    );
-   };
-   
-   export default TableHead;
+        <thead>
+         <tr>
+          {columns.map(({ label, accessor, sortable }) => {
+           const cl = sortable
+           ? sortField && sortField === accessor && order === "asc"
+            ? "up"
+            : sortField && sortField === accessor && order === "desc"
+            ? "down"
+            : "default"
+           : "";
+           return (
+            <th
+             key={accessor}
+             onClick={sortable ? () => handleSortingChange(accessor) : null}
+             className={cl}
+            >
+             {label}
+            </th>
+           );
+          })}
+         </tr>
+        </thead>
+       );
+    };
+export default TableHead;
    
