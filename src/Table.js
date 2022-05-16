@@ -17,19 +17,48 @@ const Initiative_Table = () => {
  ];
 
  const updateinitiativeDB = (value, accessor, tData) => {
-    
-    const returned = axios.patch(`${apiUrl}/api/v1/initiatives/${tData.id}`, { name: value 
+    if (accessor === "name") {
 
-    })
-    .then(function (response) {
-        console.log(returned);
-        console.log(tData);
-    })
-    .catch(function (error) {
+    axios.put(`${apiUrl}/api/v1/initiatives/${tData.id}`, {name: value, health: tData.health, initiative: tData.initiative, condition: tData.condition}  )
+    .then((response) => {
+        console.log(response.data);
+      }, (error) => {
         console.log(error);
-        
-    });
+      });
     }
+    if (accessor === "health") {
+
+        axios.put(`${apiUrl}/api/v1/initiatives/${tData.id}`, {health: value, name: tData.name, initiative: tData.initiative, condition: tData.condition}  )
+        .then((response) => {
+            console.log(response.data);
+          }, (error) => {
+            console.log(error);
+          });
+        }
+
+    if (accessor === "condition") {
+
+        axios.put(`${apiUrl}/api/v1/initiatives/${tData.id}`, {condition: value, health: tData.health, initiative: tData.initiative, name: tData.name}  )
+        .then((response) => {
+            console.log(response.data);
+            }, (error) => {
+            console.log(error);
+            });
+        }
+        
+    if (accessor === "initiative") {
+
+        axios.put(`${apiUrl}/api/v1/initiatives/${tData.id}`, {initiative: value, health: tData.health, name: tData.name, condition: tData.condition}  )
+        .then((response) => {
+            console.log(response.data);
+            }, (error) => {
+            console.log(error);
+            });
+        }
+
+
+};
+    
 
  const fetchInitiative= () => {
     axios.get(`${apiUrl}/api/v1/initiatives`)

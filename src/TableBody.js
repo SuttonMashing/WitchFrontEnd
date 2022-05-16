@@ -6,10 +6,8 @@
       const header = accessor;
       console.log(tData.id)
       console.log(value)
-      console.log(accessor)
-      updateinitiativeDB(value, accessor, tData)
-
-      
+      console.log(header)
+      updateinitiativeDB(value, accessor, tData)      
    }
 
     return (
