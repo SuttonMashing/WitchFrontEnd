@@ -1,4 +1,7 @@
- const TableBody = ({ tableData, columns, updateinitiativeDB }) => {
+import axios from "axios";
+
+ const TableBody = ({ tableData, columns, updateinitiativeDB, fetchInitiative }) => {
+   const apiUrl = "https://witchlightdb.herokuapp.com"
 
    const handleChange = (accessor, tData) => (e) => {
       
@@ -8,6 +11,18 @@
       console.log(value)
       console.log(header)
       updateinitiativeDB(value, accessor, tData)      
+   }
+
+   const clearInitiative = (e, data) => {
+      e.preventDefault();
+      axios.delete(`${apiUrl}/api/v1/initiatives/${data}`)
+      .then((response) => {
+         console.log(response.data);
+         fetchInitiative();
+         }, (error) => {
+         console.log(error);
+         });
+      
    }
 
     return (
@@ -20,6 +35,7 @@
           return <td onBlur={handleChange(accessor, data)} contentEditable='true' key={accessor}>{tData}</td>
 
          })}
+         <button onClick={(e)=> clearInitiative(e, data.id)}>Delete</button>
         </tr>
        );
       })}

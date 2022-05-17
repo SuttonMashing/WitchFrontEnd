@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter,
@@ -11,6 +10,7 @@ import Menu from './Menu'
 import Header from './Header'
 import DownfallCitizens from './DownfallCitizens';
 import Initiative from './Initiative';
+import NewTableRow from './NewTableRow';
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/hitherencounters/*" element={<HitherEncounters/>} />
             <Route path="/downfallcitizens/*" element={<DownfallCitizens/>} />
             <Route path="/initiative/*" element={<Initiative/>} />
+            <Route path="/newrow/*" element={<NewTableRow/>} />
             </Routes>
         </div>
       </div>

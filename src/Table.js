@@ -3,11 +3,13 @@ import mockdata from "./data.json";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import axios from "axios";
+import NewTableRow from "./NewTableRow";
 
 
 const Initiative_Table = () => {
  const [tableData, setTableData] = useState(mockdata);
  const apiUrl = "https://witchlightdb.herokuapp.com"
+ 
 
  const columns = [
      { label: "Initiative", accessor: "initiative", sortable: true },
@@ -45,7 +47,7 @@ const Initiative_Table = () => {
             console.log(error);
             });
         }
-        
+
     if (accessor === "initiative") {
 
         axios.put(`${apiUrl}/api/v1/initiatives/${tData.id}`, {initiative: value, health: tData.health, name: tData.name, condition: tData.condition}  )
@@ -88,10 +90,7 @@ const Initiative_Table = () => {
     }
    };
    
-   const [inEditMode, setInEditMode] = useState({
-    status: false,
-    rowKey: null
-});
+
 
 
 useEffect(() => {
@@ -101,12 +100,15 @@ useEffect(() => {
 
 
  return (
-  <>
+    <div>
+  <div className="table-container">
    <table className="table">
     <TableHead columns={columns} handleSorting={handleSorting}/>
-    <TableBody columns={columns} tableData={tableData} updateinitiativeDB={updateinitiativeDB}/>
+    <TableBody columns={columns} tableData={tableData} updateinitiativeDB={updateinitiativeDB} fetchInitiative={fetchInitiative}/>
    </table>
-  </>
+   </div>
+   <NewTableRow fetchInitiative={fetchInitiative}/>
+  </div>
  );
 };
 
