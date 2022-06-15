@@ -75,6 +75,9 @@ const Initiative_Table = () => {
 
 
  const handleSorting = (sortField, sortOrder) => {
+   sortField = "initiative";
+   sortOrder = "desc"
+   console.log(sortOrder);
     if (sortField) {
      const sorted = [...tableData].sort((a, b) => {
       if (a[sortField] === null) return 1;

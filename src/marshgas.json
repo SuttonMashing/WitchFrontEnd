@@ -1,0 +1,21 @@
+[
+    {
+      "number": 1,
+      "type": "Babble Gas",
+      "description": "Whenever the character speaks, their words come out as gibberish that only the character and others affected by this gas can understand. This effect does not impede the character's ability to cast spells that have verbal components."
+    },
+    {
+        "number": 2,
+        "type": "Hiccuping Gas",
+        "description": "The character experiences a most annoying case of the hiccups. To cast a spell that has a verbal component, the character must succeed on a DC 10 Consitution check. Also, the character has disadvantage on Dexterity (Stealth) checks made to hide."
+  
+    },
+    {
+      "number": 3,
+        "type": "Warting Gas",
+        "description": "Hideous warts erupt across the character's body. The warts are unattractive but have no harmful effect"
+    },
+    {"number": 4,
+      "type": "Bittertongue Gas",
+      "description": "A foul taste fills the character's mouth and everything they eat or drink tastes awful. Slugs appear to be the only execption; they taste like ripe cherries"}
+]

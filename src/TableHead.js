@@ -3,7 +3,7 @@ import { useState } from "react";
 const TableHead = ({ columns, handleSorting }) => {
 
     const [sortField, setSortField] = useState("");
-    const [order, setOrder] = useState("asc");
+    const [order, setOrder] = useState("");
     const handleSortingChange = (accessor) => {
     const sortOrder =
         accessor === sortField && order === "asc" ? "desc" : "asc";
@@ -17,19 +17,17 @@ const TableHead = ({ columns, handleSorting }) => {
          <tr>
           {columns.map(({ label, accessor, sortable }) => {
            const cl = sortable
-           ? sortField && sortField === accessor && order === "asc"
-            ? "up"
-            : sortField && sortField === accessor && order === "desc"
+           ? sortField && sortField === accessor && order === "desc"
             ? "down"
             : "default"
            : "";
            return (
             <th
              key={accessor}
-             onClick={sortable ? () => handleSortingChange(accessor) : null}
              className={cl}
             >
              {label}
+             <button onClick={sortable ? () => handleSortingChange(accessor) : null}> sort </button>
             </th>
            );
           })}
