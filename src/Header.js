@@ -5,9 +5,9 @@ function Header(props) {
         <header className="header">
             <div className="header-container">
                 <ul className="header-items">
-                    <li>Bookshop</li>
-                    <li>Think Care Careers</li>
-                    <li>Sign in</li>
+                    <li>Encounters</li>
+                    <li>Patreon</li>
+                    <li>Hugs and Kisses</li>
                 </ul>
             </div>
         </header>
